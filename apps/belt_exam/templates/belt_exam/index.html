@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login Registration</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  </head>
+  <body>
+    <div align = "center">
+<h1>Register</h1>
+  <form class="" action="/create" method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="user_name" placeholder="User Name">
+    <input type="password" name="password" placeholder="Password">
+    <input type="password" name="password_confirm" placeholder="Confirm Password">
+    <input type="date" name="date">
+    <input type="submit" value="Create account">
+  </form>
+  {% if messages %}
+    <ul>
+    {% for message in messages %}
+      <li>{{message}}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  <h1>Login</h1>
+
+    <form class="" action="/login" method="post">
+      {% csrf_token %}
+      <input type="text" name="user_name" placeholder="Enter Username">
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit" value="Login">
+    </form>
+    </div>
+
+
+
+  </body>
+</html>

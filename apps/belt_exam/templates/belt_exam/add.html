@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Create Item</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+</head>
+<body>
+  <div id="add">
+    <div align="center">
+    <h1>Create a New Wish List Item</h1>
+  <form action="/items" method = "post">
+    {% csrf_token %}
+    <label for="">Item/Product</label>
+    <input type="text" name = "item"><br>
+    <input type="submit" value = "Add">
+  </form>
+  </div>
+  </div>
+</body>
+</html>
